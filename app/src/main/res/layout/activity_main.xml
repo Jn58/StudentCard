@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.cacog.studentcard.MainActivity"
+    android:background="@color/crimson"
+    android:layout_centerHorizontal="true"
+    android:layout_centerInParent="true"
+    android:layout_columnWeight="2"
+    android:layout_columnSpan="2"
+    android:layout_column="2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        android:backgroundTintMode="src_over">
+
+        <ImageView
+            android:src="@drawable/crimson1positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/imageView"
+            android:clickable="false"
+            android:layout_margin="30dp"
+            android:scaleType="fitCenter"
+            android:alpha="0.1" />
+
+        <TextView
+            android:text="모바일 학생증"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:textSize="45sp"
+            android:layout_alignTop="@+id/imageView"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginBox"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/id_row">
+
+                <TextView
+                    android:text="ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/edit_id"
+                    android:hint="ID" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/pw_row" >
+
+                <TextView
+                    android:text="PW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pw" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/edit_pw"
+                    android:hint="Password"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:text="Login"
+                    android:layout_width="match_parent"
+                    android:id="@+id/login"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:background="@android:drawable/btn_default" />
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginBox"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignStart="@+id/title"
+            android:id="@+id/manual_input"
+            android:layout_alignRight="@+id/title"
+            android:layout_alignEnd="@+id/title"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:text="Manual Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginBox"
+                android:layout_alignLeft="@+id/title"
+                android:layout_alignStart="@+id/title"
+                android:textStyle="bold"
+                android:id="@+id/manual_text"
+                android:paddingTop="10dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Pass Code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editText3"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:text="apply"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/button2"
+                    android:background="@android:drawable/btn_default"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/manual_input"
+            android:layout_alignLeft="@+id/manual_input"
+            android:layout_alignStart="@+id/manual_input"
+            android:id="@+id/status"
+            android:layout_alignRight="@+id/manual_input"
+            android:layout_alignEnd="@+id/manual_input"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:text="Current Code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:id="@+id/textView7" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:hint="NULL" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
