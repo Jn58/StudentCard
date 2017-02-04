@@ -19,9 +19,9 @@ import android.util.Log;
  */
 public class AccountStorage {
     private static final String PREF_ACCOUNT_NUMBER = "account_number";
-    private static final String DEFAULT_ACCOUNT_NUMBER = "321";
+    private static final String DEFAULT_ACCOUNT_NUMBER = "0000";
     private static final String TAG = "AccountStorage";
-    private static String sAccount = "333";
+    private static String sAccount = null;
     private static final Object sAccountLock = new Object();
 
     public static void SetAccount(Context c, String s) {
