@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -23,6 +24,8 @@ import java.util.Map;
 
 public class MainActivity extends Activity {
 
+    public static final String ADDR="http://172.30.1.55";
+    public static final String LoginFail="loginFail";
     TextView passcode ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,16 @@ public class MainActivity extends Activity {
         passcode.setText(AccountStorage.GetAccount(this));
     }
 
+    public void onLogin(View v)
+    {
+        EditText id=(EditText)findViewById(R.id.edit_id);
+        EditText pw=(EditText)findViewById(R.id.edit_pw);
+        postData data=new postData();
+        data.post.put("pw",pw.getText().toString());
+        data.post.put("id",id.getText().toString());
+        data.url=ADDR;
+        new send().execute(data);
+    }
     public void onApply(View v)
     {
         EditText editText = (EditText)findViewById(R.id.edit_passcode);
@@ -129,6 +142,14 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Log.d("POST","Receive : "+s);
+            if(s.equals(LoginFail))
+            {
+                Toast.makeText(getApplicationContext(),"로그인에 실패하였습니다.\n다시 시도해 보시기 바랍니다.",Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                changeCode(s);
+            }
         }
     }
 }

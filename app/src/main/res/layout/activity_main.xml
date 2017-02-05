@@ -104,7 +104,8 @@
                     android:id="@+id/login"
                     android:layout_height="wrap_content"
                     android:layout_span="2"
-                    android:background="@android:drawable/btn_default" />
+                    android:background="@android:drawable/btn_default"
+                    android:onClick="onLogin" />
             </TableRow>
 
         </TableLayout>
