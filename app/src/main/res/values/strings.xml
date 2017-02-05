@@ -1,5 +1,5 @@
 <resources>
     <string name="service_name">Student Card Service</string>
-    <string name="app_name">Student Card</string>
+    <string name="app_name">KU Card</string>
     <string name="card_title">KU Student Card</string>
 </resources>
